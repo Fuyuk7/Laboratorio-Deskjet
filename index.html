@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laboratório Deskjet - Loja Teste</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+      line-height: 1.4;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    header {
+      background-color: #fb3940; /* Shopee red */
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    header nav a {
+      margin-left: 20px;
+      font-weight: 600;
+      transition: opacity 0.3s ease;
+    }
+
+    header nav a:hover {
+      opacity: 0.8;
+    }
+
+    /* Banner principal */
+    .banner {
+      width: 100%;
+      height: 250px;
+      background: url('https://via.placeholder.com/1200x250/FB3940/fff?text=Promoção+Shopee') center/cover no-repeat;
+      margin-bottom: 20px;
+    }
+
+    /* Container principal */
+    main {
+      flex-grow: 1;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+
+    /* Seção de produtos */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.3s ease;
+      background-color: #fff;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 4px 12px rgba(251, 57, 64, 0.3);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 12px 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #222;
+      min-height: 44px;
+    }
+
+    .product-price {
+      color: #fb3940;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .product-old-price {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 0.85rem;
+      margin-left: 8px;
+    }
+
+    .buy-button {
+      background-color: #fb3940;
+      color: white;
+      border: none;
+      padding: 10px 0;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .buy-button:hover {
+      background-color: #e03237;
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #222;
+      color: #eee;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      header nav {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Laboratório Deskjet</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Categorias</a>
+      <a href="#">Promoções</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
+
+  <div class="banner" role="img" aria-label="Banner promocional da Shopee"></div>
+
+  <main>
+    <section class="products" aria-label="Produtos em destaque">
+      <article class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Produto+1" alt="Produto 1" />
+        <div class="product-info">
+          <div class="product-title">Tênis Esportivo Confortável</div>
+          <div>
+            <span class="product-price">R$ 199,90</span>
+            <span class="product-old-price">R$ 299,90</span>
+          </div>
+          <button class="buy-button" aria-label="Comprar Tênis Esportivo Confortável">Comprar</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Produto+2" alt="Produto 2" />
+        <div class="product-info">
+          <div class="product-title">Smartphone Tela Grande</div>
+          <div>
+            <span class="product-price">R$ 1.299,00</span>
+            <span class="product-old-price">R$ 1.599,00</span>
+          </div>
+          <button class="buy-button" aria-label="Comprar Smartphone Tela Grande">Comprar</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Produto+3" alt="Produto 3" />
+        <div class="product-info">
+          <div class="product-title">Fone de Ouvido Bluetooth</div>
+          <div>
+            <span class="product-price">R$ 149,90</span>
+            <span class="product-old-price">R$ 199,90</span>
+          </div>
+          <button class="buy-button" aria-label="Comprar Fone de Ouvido Bluetooth">Comprar</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Produto+4" alt="Produto 4" />
+        <div class="product-info">
+          <div class="product-title">Relógio Inteligente</div>
+          <div>
+            <span class="product-price">R$ 399,00</span>
+            <span class="product-old-price">R$ 499,00</span>
+          </div>
+          <button class="buy-button" aria-label="Comprar Relógio Inteligente">Comprar</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Laboratório Deskjet - Site para testes | Desenvolvido por Fuyuk Deskjet
+  </footer>
+</body>
+</html>
